@@ -1,0 +1,60 @@
+﻿﻿﻿﻿﻿﻿﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Settings | Sky Grace Jesus Ministry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+</head>
+<body class="bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-white font-sans antialiased">
+<div id="site-header"></div>
+<script src="./header.js" defer></script>
+
+<section class="max-w-4xl mx-auto py-12 px-6">
+        <h2 class="text-3xl font-black mb-8 dark:text-white">Admin Settings</h2>
+        
+        <div class="bg-white dark:bg-slate-800 p-8 rounded-[2rem] shadow-sm mb-8">
+            <h4 class="text-xs font-black uppercase tracking-[0.3em] text-amber-500 mb-6">Security Access Codes</h4>
+            <div class="space-y-4">
+                <div class="flex justify-between items-center p-4 bg-slate-50 dark:bg-slate-900 rounded-xl">
+                    <div>
+                        <p class="text-sm font-bold dark:text-white">Financial Portal Code</p>
+                        <p class="text-[10px] text-slate-500">Required for Tithe Reports</p>
+                    </div>
+                    <input type="password" value="••••••" class="bg-transparent text-right font-mono outline-none" aria-label="Financial Portal Code" title="Financial Portal Code">
+                </div>
+                <button class="text-[10px] font-black uppercase text-blue-600">Update Codes</button>
+            </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 p-8 rounded-[2rem] shadow-sm">
+            <h4 class="text-xs font-black uppercase tracking-[0.3em] text-amber-500 mb-6">Authorized Personnel</h4>
+            <div class="space-y-4">
+                <div class="flex justify-between items-center">
+                    <span class="text-sm dark:text-white">Apostle Poliano</span>
+                    <span class="text-[9px] bg-slate-900 text-white px-3 py-1 rounded-full uppercase">Super Admin</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm dark:text-white">Media Manager</span>
+                    <button class="text-red-500 text-[9px] font-bold uppercase tracking-widest" aria-label="Revoke Access">Revoke Access</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <script src="./footer.js" defer></script>
+    <script>
+        // Check for dark mode preference
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+</body>
+</html>

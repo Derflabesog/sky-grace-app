@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sermon | Sky Grace Jesus Ministry</title>
+  <meta name="description" content="Watch a Sky Grace Jesus Ministry sermon and review its key scriptures and learning points." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+  <div id="site-header"></div>
+  <script src="../header.js" defer></script>
+
+  <main>
+    <section class="relative overflow-hidden bg-slate-950 py-14 md:py-20">
+      <div class="absolute inset-0">
+        <img src="../assets/images/hero-elohim.jpg" alt="Sky Grace Jesus Ministry" class="h-full w-full object-cover opacity-20" />
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-red-950/70"></div>
+      </div>
+      <div class="relative container mx-auto px-6">
+        <a href="../sermons.html" class="inline-flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-red-300 hover:text-white"><i class="fas fa-arrow-left"></i> All Sermons</a>
+        <h1 id="sermonTitle" class="mt-6 max-w-4xl text-3xl md:text-5xl font-black leading-tight text-white">Loading sermon…</h1>
+        <div id="sermonMeta" class="mt-5 flex flex-wrap items-center gap-3 text-sm text-slate-300"></div>
+      </div>
+    </section>
+
+    <section class="py-12 md:py-16">
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-[1.15fr_.85fr] gap-8 items-start">
+          <div>
+            <div class="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-950 shadow-xl">
+              <div class="relative aspect-video">
+                <img id="sermonThumb" src="" alt="Sermon thumbnail" class="h-full w-full object-cover" />
+                <div class="absolute inset-0 bg-black/35"></div>
+                <a id="watchYouTubeBtn" href="https://www.youtube.com/@skygraceministryTV" target="_blank" rel="noopener" class="absolute inset-0 flex items-center justify-center group">
+                  <span class="flex h-20 w-20 items-center justify-center rounded-full bg-red-600 text-2xl text-white shadow-2xl transition group-hover:scale-110 group-hover:bg-red-500"><i class="fas fa-play ml-1"></i></span>
+                </a>
+              </div>
+            </div>
+            <div class="mt-5 grid sm:grid-cols-2 gap-3">
+              <a id="watchYouTubeLink" href="https://www.youtube.com/@skygraceministryTV" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-3 rounded-2xl bg-red-600 px-6 py-4 text-xs font-black uppercase tracking-widest text-white hover:bg-red-500"><i class="fab fa-youtube text-lg"></i> Watch on YouTube</a>
+              <a id="downloadPdfBtn" href="#" class="inline-flex items-center justify-center gap-3 rounded-2xl bg-slate-900 px-6 py-4 text-xs font-black uppercase tracking-widest text-white hover:bg-slate-800"><i class="fas fa-file-pdf"></i> Download Notes</a>
+            </div>
+
+            <article class="mt-8 rounded-[2rem] border border-slate-200 bg-white p-7 md:p-9 shadow-sm">
+              <p class="text-[10px] font-black uppercase tracking-[.25em] text-red-600">Message Overview</p>
+              <h2 class="mt-2 text-2xl font-black">Sermon Summary</h2>
+              <p id="sermonSummary" class="mt-4 leading-relaxed text-slate-600"></p>
+            </article>
+          </div>
+
+          <aside class="space-y-6">
+            <section class="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+              <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-600"><i class="fas fa-book-bible text-xl"></i></div>
+              <h2 class="mt-5 text-xl font-black">Key Scriptures</h2>
+              <ul id="scripturesList" class="mt-4 space-y-4 text-sm leading-relaxed"></ul>
+            </section>
+            <section class="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+              <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-blue-600"><i class="fas fa-lightbulb text-xl"></i></div>
+              <h2 class="mt-5 text-xl font-black">Learning Points</h2>
+              <ul id="learningList" class="mt-4 list-disc space-y-3 pl-5 text-sm leading-relaxed"></ul>
+            </section>
+            <a href="https://www.youtube.com/@skygraceministryTV?sub_confirmation=1" target="_blank" rel="noopener" class="block rounded-[2rem] bg-red-600 p-7 text-white shadow-lg hover:bg-red-500">
+              <i class="fab fa-youtube text-3xl"></i><h2 class="mt-4 text-xl font-black">Subscribe to Sky Grace Ministry TV</h2><p class="mt-2 text-sm text-red-100">Receive the latest sermons and ministry teachings.</p>
+            </a>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="../footer.js" defer></script>
+
+  <script>
+    // This page is inside /sermons/. Shared header and footer links are written
+    // for root pages, so prefix their internal paths after they are injected.
+    window.addEventListener("load", () => {
+      const sharedAreas = document.querySelectorAll("#site-header, #site-footer");
+
+      sharedAreas.forEach((area) => {
+        area.querySelectorAll("a[href]").forEach((link) => {
+          const href = link.getAttribute("href");
+          if (
+            href &&
+            !href.startsWith("../") &&
+            !href.startsWith("#") &&
+            !href.startsWith("http://") &&
+            !href.startsWith("https://") &&
+            !href.startsWith("mailto:") &&
+            !href.startsWith("tel:")
+          ) {
+            link.setAttribute("href", `../${href}`);
+          }
+        });
+
+        area.querySelectorAll("img[src]").forEach((image) => {
+          const src = image.getAttribute("src");
+          if (
+            src &&
+            !src.startsWith("../") &&
+            !src.startsWith("http://") &&
+            !src.startsWith("https://") &&
+            !src.startsWith("data:")
+          ) {
+            image.setAttribute("src", `../${src}`);
+          }
+        });
+      });
+    });
+  </script>
+
+  <script src="../assets/js/sermons-data.js"></script>
+  <script src="../assets/js/sermon-detail.js"></script>
+</body>
+</html>

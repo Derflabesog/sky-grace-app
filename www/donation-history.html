@@ -1,0 +1,59 @@
+﻿﻿﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation History | Sky Grace Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-slate-50 min-h-screen">
+<div id="site-header"></div>
+<script src="./header.js" defer></script>
+
+<main class="p-8 max-w-6xl mx-auto">
+        <section class="bg-white rounded-3xl border border-slate-200 shadow-xl p-8">
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-10 gap-6">
+                <div>
+                    <h3 class="text-2xl font-black text-slate-900 uppercase tracking-tight">Financial Stewardship</h3>
+                    <p class="text-slate-500 text-sm">Giving history and ministry contribution reports.</p>
+                </div>
+                <div class="flex gap-3">
+                    <button class="bg-blue-50 text-blue-600 px-6 py-3 rounded-xl text-xs font-black uppercase hover:bg-blue-100 transition">
+                        <i class="fas fa-file-pdf mr-2"></i> Monthly Report
+                    </button>
+                    <button class="bg-slate-900 text-white px-6 py-3 rounded-xl text-xs font-black uppercase hover:bg-blue-600 transition shadow-xl">
+                        <i class="fas fa-file-invoice-dollar mr-2"></i> Yearly Tax Statement
+                    </button>
+                </div>
+            </div>
+        
+            <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="text-[10px] font-black text-slate-400 uppercase tracking-widest border-b border-slate-100">
+                            <th class="pb-4 px-4">Date</th>
+                            <th class="pb-4 px-4">Partner Name</th>
+                            <th class="pb-4 px-4">Category</th>
+                            <th class="pb-4 px-4">Amount</th>
+                            <th class="pb-4 px-4 text-right">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b border-slate-50 hover:bg-blue-50/20 transition">
+                            <td class="py-5 px-4 text-slate-500">Jan 13, 2026</td>
+                            <td class="py-5 px-4 font-bold text-slate-900">Petrus Hangula</td>
+                            <td class="py-5 px-4"><span class="text-[10px] bg-slate-100 px-2 py-1 rounded-md text-slate-500 uppercase font-bold">Tithe</span></td>
+                            <td class="py-5 px-4 font-black text-blue-600">N$ 2,500.00</td>
+                            <td class="py-5 px-4 text-right text-green-500 font-bold"><i class="fas fa-check-circle"></i> Verified</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+<div id="site-footer"></div>
+<script src="./footer.js" defer></script>
+</body>
+</html>
